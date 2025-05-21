@@ -100,9 +100,49 @@ npm start
 ```bash
 cd frontend
 npm run dev
-```
 
 Abrir [http://localhost:3000](http://localhost:3000)
+
+```
+
+## 🚢 Inicialización con Docker
+
+Podés ejecutar todo el proyecto fácilmente usando Docker y Docker Compose, sin necesidad de instalar Node.js o MongoDB localmente.
+
+### 1. Requisitos
+
+- Docker
+- Docker Compose
+
+### 2. Archivos `.env`
+
+#### backend/.env
+
+PORT=3001
+MONGO_URI=mongodb://mongo:27017/fintechdb
+JWT_SECRET=supersecreto
+STRIPE_SECRET_KEY=sk_test_simulado
+GMAIL_USER=tuemail@gmail.com
+GMAIL_PASS=tucontraseña
+
+#### frontend/.env.local
+
+NEXT_PUBLIC_API_URL=http://localhost:3001
+BACKEND_API_URL=http://backend:3001
+
+> ⚠️ `NEXT_PUBLIC_API_URL` se usa en el navegador, `BACKEND_API_URL` se usa en SSR desde el servidor de Next.js dentro del contenedor.
+
+### 3. Ejecutar con Docker Compose
+
+docker-compose up --build
+
+Esto levantará:
+
+- `mongodb` en el puerto `27017`
+- `backend` en el puerto `3001`
+- `frontend` (Next.js) en el puerto `3000`
+
+Accedé a la app desde: http://localhost:3000
 
 ---
 
