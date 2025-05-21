@@ -114,19 +114,10 @@ Podés ejecutar todo el proyecto fácilmente usando Docker y Docker Compose, sin
 - Docker
 - Docker Compose
 
-### 2. Archivos `.env`
+### 2. Archivos
+#### backend/contenido del .env
 
-#### backend/.env
-
-PORT=3001
-MONGO_URI=mongodb://mongo:27017/fintechdb
-JWT_SECRET=supersecreto
-STRIPE_SECRET_KEY=sk_test_simulado
-GMAIL_USER=tuemail@gmail.com
-GMAIL_PASS=tucontraseña
-
-#### frontend/.env.local
-
+#### frontend/
 NEXT_PUBLIC_API_URL=http://localhost:3001
 BACKEND_API_URL=http://backend:3001
 
